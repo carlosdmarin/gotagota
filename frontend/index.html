@@ -1,62 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="Es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Panel de Administración</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-<body>
-<!-- SIDEBAR MOBILE-CELULAR -->
-<div class="topbar">
-    <div class="title-business">
+  <body>
+    <!-- TOPBAR (solo visible en móvil) -->
+    <div class="topbar">
+      <div class="title-business">
         <span>JUANITO SAC</span>
-    </div>
-    <div class="btn-menu">
-        <button class="hamburger">
-            <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="btn-menu">
+        <button class="hamburger" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
         </button>
+      </div>
     </div>
-</div>
-<!-- OVERLAY JUNTO CON EL NAVBAR-->
-<div class="overlay"></div>
-<!-- SIBERBAR DESKTOP: es el menu / la barra lateral IZQ...-->
-<aside class="sidebar">
-    <div class="sidebar-logo">Dashboard</div>
-    <ul>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">Dashboard</div>
+      <ul>
         <li>
-            <a href="#" class="activo" id="activo">
-                <i class="fa-solid fa-house"></i>
-                <span>Inicio</span>
-            </a>
+          <a href="#" class="activo" data-page="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+          </a>
         </li>
         <li>
-            <a href="#">
-                <i class="fa-solid fa-folder-open"></i>
-                <span>Reportes</span>
-            </a>
+          <a href="#" data-page="reportes">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Reportes</span>
+          </a>
         </li>
-    </ul>
-</aside>
-<!-- CONTENIDO PRINCIAL (ctrl+})-->
-<main>
-    <!-- navigation -->
-    <nav class="breadcrumb">
+        <li class="nav-logout">
+          <a href="#" id="btn-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Cerrar sesión</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <nav class="breadcrumb">
         <span>Inicio</span>
         <i class="fa-solid fa-chevron-right"></i>
-        <span>Reportes</span>
-    </nav>
-    <div class="main-content">
-        <p>TABLA DE CLIENTES</p>
-        <section id="tabla-cliente">
+        <span id="breadcrumb-page">Clientes</span>
+      </nav>
+      <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="mb-0">REPORTE DE CLIENTES</h2>
+          <button class="btn btn-primary">
+            <i class="fa-solid fa-user-plus"></i> REGISTRAR
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="table-clientes"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
 
-        </section>
-    </div>
-    <script src="js/main.js""></script>
-</main>
-</body>
-
+    <script src="js/main.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
