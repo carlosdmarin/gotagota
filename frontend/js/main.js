@@ -62,3 +62,30 @@ document.addEventListener("click", function (e) {
      }})
   }
 });
+
+//
+function guardarCliente() {
+  const cliente = {
+    nombre: document.getElementById("c_nombre").value,
+    apellido: document.getElementById("c_apellido").value,
+    dni: document.getElementById("c_dni").value,
+    telefono: document.getElementById("c_telefono").value,
+    direccion: document.getElementById("c_direccion").value
+  };
+  fetch("http://localhost:8080/api/cliente/registrar", {  
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(cliente)
+  })
+  .then(response => {
+    if (response.ok) {
+      alert("Cliente registrado");
+      location.reload();
+    } else {
+      alert("Error: " + response.status);
+    }
+  })
+  .catch(error => console.error("Error:", error));
+}
+
+document.getElementById("btncrearCliente").onclick = guardarCliente;
