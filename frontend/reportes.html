@@ -97,10 +97,71 @@
         </div>
       </div>
     </main>
-    <!-- Modal -->
+    <!-- Modal REGISTRO CLIENTE-->
     <div
       class="modal fade"
       id="modalRegistroCliente"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Regsitrar Cliente</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+           <form id="formRegistroCliente">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="c_nombre" prequired>
+    </div>
+    
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="c_apellido" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="dni" class="form-label">DNI</label>
+      <input type="text" class="form-control" id="c_dni" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="tel" class="form-control" id="c_telefono">
+    </div>
+    
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección</label>
+      <textarea class="form-control" id="c_direccion" rows="2"></textarea>
+    </div>
+  </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary" id="btncrearCliente">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Modal EDITAR CLIENTE CLIENTE-->
+    <div
+      class="modal fade"
+      id="modalEditarCliente"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
