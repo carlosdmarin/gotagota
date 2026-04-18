@@ -21,8 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         <td>${cliente.direccion}</td>
                         <td>
                         <!-- Botón Editar (Azul Outline) -->
-                        <button class="btn btn-outline-primary btn-sm">
-                            <i class="fa-solid fa-pen-to-square"></i> Editar
+                        <button 
+                        class="btn btn-outline-primary btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalEditarCliente"
+                        data-idcli${cliente.id}
+                        data-nomcli${cliente.nombre}
+                        data-apellcli${cliente.apellido}
+                        data-telfcli${cliente.telefono}
+                        data-direcli${cliente.direccion}>
+                        <i class="fa-solid fa-pen-to-square"></i> Editar
                         </button>
 
                         <!-- Botón Eliminar (Rojo Outline) -->
@@ -89,3 +97,10 @@ function guardarCliente() {
 }
 
 document.getElementById("btncrearCliente").onclick = guardarCliente;
+
+
+
+//Funcion para poner datos en el input del modal editar cliente
+function llamardatos(){
+  
+}
